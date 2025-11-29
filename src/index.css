@@ -1,0 +1,29 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply text-gray-100 antialiased;
+    background-color: #020814;
+  }
+  * { box-sizing: border-box; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-neutral-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-cyan-500 rounded-full; }
+}
+@layer components {
+  .ripple {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.35);
+    pointer-events: none;
+    animation: rippleAnim 1s ease-out forwards;
+  }
+}
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
